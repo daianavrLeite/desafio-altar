@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="row">
+    </div>
+    <div class="divGenerate row">
+        <div class="col-4">
+            <div class="row">
+                <label>Character</label>
+            </div>
+            <input  type="text" class="form-control" maxlength="1"  placeholder="Character" aria-label="Character"
+                aria-describedby="basic-addon2" [formControl]="textControl"  [(ngModel)]="character">
+        </div>
+        <div class="col-4">
+            <div class="dommy-card">
+                <div class="clock">
+                    <div class="num num1"> <div>1</div></div>
+                    <div class="num num2"> <div>2</div></div>
+                    <div class="num num3"> <div>3</div></div>
+                    <div class="num num4"> <div>4</div></div>
+                    <div class="num num5"> <div>5</div></div>
+                    <div class="num num6"> <div>6</div></div>
+                    <div class="num num7"> <div>7</div></div>
+                    <div class="num num8"> <div>8</div></div>
+                    <div class="num num9"> <div>9</div></div>
+                    <div class="num num10"> <div>10</div></div>
+                    <div class="num num11"> <div>11</div></div>
+                    <div class="num num12"> <div>12</div></div>
+                    <div class="hr-hand" #hrHand></div>
+                    <div class="min-hand" #minHand></div>
+                    <div class="sec-hand" #secHand></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <button [disabled] ="generatedGrid" #buttonIniciar (click)="startGrid()" class="btn btn-info"> GENERATE 2D GRID</button>
+        </div>
+    </div>
+    <div *ngIf="isCode" class="row">
+        <table class="table table-bordered table-dark">
+            <thead>
+                <th class="bg-tb"></th>
+                <th class="bg-tb">0</th>
+                <th class="bg-tb">1</th>
+                <th class="bg-tb">2</th>
+                <th class="bg-tb">3</th>
+                <th class="bg-tb">4</th>
+                <th class="bg-tb">5</th>
+                <th class="bg-tb">6</th>
+                <th class="bg-tb">7</th>
+                <th class="bg-tb">8</th>
+                <th class="bg-tb">9</th>
+                <tr *ngFor="let alfa of matrizAlphabet; let i=index" >
+                    <th class="bg-tb">{{i}}</th>
+                    <th *ngFor="let cell of alfa"scope="col">{{cell}}</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div *ngIf="isCode" class="row">
+        <div class="col-4">    
+        </div>    
+        <div class="col-4">
+            <div class="row">
+                <div class="col-6">
+                    <p class="ponto">  
+                </div>
+                <div class="col-6">
+                    <p>LIVE</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+        </div>
+    </div>
+    <div *ngIf="isCode"class="row">
+        <div class="col-4">
+        </div>
+        <div class="code col-4">
+            <p>YOUR CODE: {{countFirstLetter}}{{countSecondLetter}}</p>
+        </div>
+        <div class="col-4">
+        </div>
+    </div>
+</div>

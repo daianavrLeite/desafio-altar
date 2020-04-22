@@ -1,0 +1,21 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+  <div class="col-4">
+    <img src=" /assets/favicon.png" [routerLink]="['/']">
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+    aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item mr-4">
+        <a class="nav-link" [routerLink]="['/generator']" routerLinkActive="active">Generator</a>
+      </li>
+      <li class="nav-item mr-4">
+        <a class="nav-link" href="#" [routerLink]="['/payments']">Payments</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

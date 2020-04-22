@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <div class="col-6">
+                    <p class="ponto">
+                </div>
+                <div class="col-6">
+                    <p>LIVE</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+        </div>
+        <div class="code col-4">
+            <p>YOUR CODE: {{code}}</p>
+        </div>
+        <div class="col-4">
+        </div>
+    </div>
+    <div class=" row1 row ">
+        <div class="col-3">
+            <div class="row">
+                <label>PAYMENT</label>
+            </div>
+            <input type="text" class="form-control" placeholder="Payment" aria-label="Payment"
+                aria-describedby="basic-addon2" [(ngModel)]="paymentsInput" required>
+        </div>
+        <div class="col-3">
+            <div class="row">
+                <label>AMMOUNT</label>
+            </div>
+            <input type="text" class="form-control" placeholder="Ammount" aria-label="Ammount"
+                aria-describedby="basic-addon2" [(ngModel)]="ammount" required>
+        </div>
+        <div class="col-3">
+            <div class="row">
+            </div>
+            <button (click)="addItem()" class="btn btn-info"> ADD</button>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">NAME</th>
+                    <th scope="col">AMMOUNT</th>
+                    <th scope="col">CODE</th>
+                    <th scope="col">GRID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let payment of payments">
+                    <td>{{payment.name}} </td>
+                    <td>{{payment.ammount}}</td>
+                    <td>{{payment.code}}</td>
+                    <td>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr *ngFor="let alfa of payment.grid; let i=index">
+                                    <th *ngFor="let cell of alfa" scope="col">{{cell}}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
